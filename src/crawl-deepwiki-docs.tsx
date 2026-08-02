@@ -20,7 +20,7 @@ function isValidHttpUrl(string: string): boolean {
   let url
   try {
     url = new URL(string)
-  } catch (_) {
+  } catch {
     return false
   }
   return url.protocol === "http:" || url.protocol === "https:"
@@ -89,12 +89,8 @@ async function crawlPage(
         }
       }
     })
-  } catch (error) {
-    if (response) {
-      stats.failed++
-    } else {
-      stats.failed++
-    }
+  } catch {
+    stats.failed++
   }
 }
 

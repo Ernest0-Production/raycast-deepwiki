@@ -1,5 +1,10 @@
 # Deepwiki Changelog
 
+## [Search History] - {PR_MERGE_DATE}
+
+- Added recent search history when the search field is empty
+- Updated Raycast API and related dependencies
+
 ## [Initial Version] - 2025-05-07
 
 - Initial release with three commands:
