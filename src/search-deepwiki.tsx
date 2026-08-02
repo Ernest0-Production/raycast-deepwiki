@@ -116,7 +116,7 @@ export default function Command() {
       ) : (searchResults?.length ?? 0) === 0 && !isLoadingSearch ? (
         <List.EmptyView
           title="No Repositories Found"
-          description={`Could not find any matching repositories on Deepwiki for "${searchText}".`}
+          description={`Could not find any matching repositories on DeepWiki for "${searchText}".`}
         />
       ) : (
         <List.Section title="Search Results">
@@ -137,7 +137,7 @@ function RepoListItem({ repo, onOpen }: { repo: RepoResult; onOpen: (repo: RepoR
       accessories={repo.stars ? [{ text: repo.stars, icon: Icon.Star }] : []}
       actions={
         <ActionPanel>
-          <Action.OpenInBrowser title="Open in Deepwiki" url={repo.deepWikiUrl} onOpen={() => onOpen(repo)} />
+          <Action.OpenInBrowser title="Open in DeepWiki" url={repo.deepWikiUrl} onOpen={() => onOpen(repo)} />
           <Action.OpenInBrowser title="Open in GitHub" url={repo.githubUrl} />
           <Action
             title="Crawl and Copy Docs"
@@ -158,7 +158,7 @@ function RepoListItem({ repo, onOpen }: { repo: RepoResult; onOpen: (repo: RepoR
             }}
           />
           <Action
-            title="Open Deepwiki Page Command"
+            title="Open DeepWiki Page Command"
             icon={Icon.Terminal}
             onAction={async () => {
               try {
@@ -174,7 +174,7 @@ function RepoListItem({ repo, onOpen }: { repo: RepoResult; onOpen: (repo: RepoR
               }
             }}
           />
-          <Action.CopyToClipboard title="Copy Deepwiki URL" content={repo.deepWikiUrl} />
+          <Action.CopyToClipboard title="Copy DeepWiki URL" content={repo.deepWikiUrl} />
           <Action.CopyToClipboard title="Copy GitHub URL" content={repo.githubUrl} />
           <Action.CopyToClipboard title="Copy Org/repo" content={repo.orgRepo} />
         </ActionPanel>
